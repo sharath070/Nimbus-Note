@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/layout_bg"
+    tools:context=".fragments.HomeFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvDisplayNotes"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivAllNotes" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddNote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:clickable="true"
+        android:src="@drawable/ic_add"
+        android:tint="#FFFFFF"
+        app:backgroundTint="@color/text_red"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/search_view"
+        android:iconifiedByDefault="false"
+        android:queryBackground="@android:color/transparent"
+        android:queryHint="Search"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivAllNotes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:background="@drawable/filter_bg"
+        android:padding="2dp"
+        android:scaleType="centerCrop"
+        android:scaleX="1.4"
+        android:scaleY="1.4"
+        android:src="@drawable/filter_list"
+        app:layout_constraintEnd_toStartOf="@+id/tvHigh"
+        app:layout_constraintHorizontal_bias="0.17"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@+id/searchView"
+        app:layout_constraintTop_toBottomOf="@+id/searchView" />
+
+    <TextView
+        android:id="@+id/tvHigh"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/filter_bg"
+        android:gravity="center"
+        android:paddingLeft="25dp"
+        android:paddingTop="3dp"
+        android:paddingRight="25dp"
+        android:paddingBottom="3dp"
+        android:text="High"
+        android:textColor="@color/text_red"
+        app:layout_constraintBottom_toBottomOf="@+id/ivAllNotes"
+        app:layout_constraintEnd_toStartOf="@+id/tvMedium"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/ivAllNotes"
+        app:layout_constraintTop_toTopOf="@+id/ivAllNotes" />
+
+    <TextView
+        android:id="@+id/tvMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/filter_bg"
+        android:gravity="center"
+        android:paddingLeft="19dp"
+        android:paddingTop="3dp"
+        android:paddingRight="19dp"
+        android:paddingBottom="3dp"
+        android:text="Medium"
+        android:textColor="@color/yellow_color"
+        app:layout_constraintBottom_toBottomOf="@+id/tvHigh"
+        app:layout_constraintEnd_toStartOf="@+id/tvLow"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvHigh"
+        app:layout_constraintTop_toTopOf="@+id/tvHigh"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tvLow"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/filter_bg"
+        android:gravity="center"
+        android:paddingLeft="25dp"
+        android:paddingTop="3dp"
+        android:paddingRight="25dp"
+        android:paddingBottom="3dp"
+        android:text="Low"
+        android:textColor="@color/green_color"
+        app:layout_constraintBottom_toBottomOf="@+id/tvMedium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvMedium"
+        app:layout_constraintTop_toTopOf="@+id/tvMedium"
+        app:layout_constraintVertical_bias="1.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
